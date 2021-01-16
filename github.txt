@@ -1,0 +1,16 @@
+git remote add origin https://github
+git push -u origin master
+git pull origin master  - make sure you PULL when your head in git is in master
+git clone https://github
+git push origin master
+git push origin NEW - by doing this you create a new branch in github
+git rm NAME - delete a file
+
+git pull = git fetch + git merge
+git pull - even if there is a conflict it will still do the merge
+git fetch - is safe, so even if there is a conflict you can still fix it
+git merge origin/master
+
+so when fetching:
+git fetch
+in git status you will see maybe a conflict, then you you edit it and do "git add ." and then merge and hten maybe git push

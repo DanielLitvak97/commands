@@ -1,0 +1,29 @@
+git config --global user.email "aa@aa.com" - it depends on the OS and you do it only one time
+git init
+git add .
+git commit -m "aa"
+git branch - shows branches and your current one you on
+git commit -a -m "aaa" - commit and add all the edited files
+git branch NEW - create a new branch
+git checkout NEW - Enter to the branch called NEW, note that when chaning to another branch, the you will immediately see the code of that branch, if its html says that page is red then you will see immediately your web changes to red.
+git checkout -b NEWWW - creates new branch and enters it
+git branch -d NEW - delete branch
+git log  - you can see the ID of previous commits
+git reset --hard AAAAAA - here you put the ID of commit you want to restore
+git status
+git fetch origin
+git log --all --decorate --oneline --graph
+alias graph ="git log --all --decorate --oneline --graph"
+git diff AAAA..BBBB - it shoes which new changes AAAA will get in the merge
+git diff - shows us the new edits we just did
+git merge BBBB
+git branch --merged - it shows which branches are already mereged, hence we can delete the relevant branches
+git checkout IDNAME - you put there the ID of some of your previous commits, this way you can also cehck whats in there but not really resotre it
+
+
+
+
+
+
+https://www.youtube.com/channel/UCEoaojfEY_6L5TWWjIn9t9Q
+
