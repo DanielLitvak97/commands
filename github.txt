@@ -1,4 +1,4 @@
-git remote add origin https://github
+git remote add origin https://github.com/DanielLitvak97/commands.git
 git push -u origin master
 git pull origin master  - make sure you PULL when your head in git is in master
 git clone https://github

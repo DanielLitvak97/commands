@@ -1,0 +1,153 @@
+
+
+'''
+age = "20"
+name = "dan"
+print("my name is " + name + " and I am " + age + " years old")
+
+uppper="Daniel"
+print(uppper.upper())
+print(uppper.lower().isupper())
+print("heelo\nwhat")
+
+
+aa="ccbgc"
+print(len("aaaaa"))
+print(aa[0])
+print(aa[0]+aa[0])
+print(aa.index("c"))
+what1="hello there"
+print(what1.replace("there","here"))
+print(1+1)
+print(abs(-2))
+print(pow(2,3))
+print(max(2,5))
+print(min(2,5))
+print("round of 2.1 is: " + str(round(2.1))+"\n"+"round of 2.5 is: " + str(round(2.5)))
+from math import *
+print(floor(3.8))
+print(ceil(3.1))
+print(sqrt(36))
+
+#namee=input("Enter your name: ")
+#print("hello " + namee)
+
+
+anime=["one piece", "death note", "dbz", "kimetsu"]
+test=["list1","list2"]
+print (anime[0])
+anime[1]="aot"
+anime.extend(test)
+anime.insert(-1,"worked")
+anime.remove("worked")
+test.clear()
+print (anime[1:])
+print(test)
+print(anime.pop())
+print(anime)
+print(anime.index("aot"))
+print(anime.count("aot"))
+anime.sort()
+print (anime)
+anime.reverse()
+print (anime)
+
+
+anime1=anime.copy()
+#tupple
+check1=(2,4)
+
+
+
+
+
+
+
+
+dict= {
+    "one":1,
+    "two":2
+}
+print(dict.get("on","what"))
+
+
+
+
+
+
+
+word="hello"
+guess=""
+#while guess!=word:
+    #guess=input("type the word here:")
+
+
+
+
+
+
+
+
+
+
+
+
+
+game=[
+    ["O","O","O"],
+    ["O","O","O"],
+    ["O","O","O"]
+]
+
+correct1_row=1
+correct1_col=2
+guess1_row=-1
+guess1_col=-1
+tries=1
+print (range(0,3))
+
+while guess1_row != correct1_row and guess1_col != correct1_col and tries < 5:
+    guess1_row=int(input("Try to guess the right point of the row: "))
+    guess1_col=int(input("Try to guess the right point of the col:"))
+
+
+    #if (guess1_col != (range(0, 3))) or (guess1_row != (range(0, 3))):
+        #print("Please choose numbers from range of 0-2")
+    if guess1_row != correct1_row or guess1_col != correct1_col:
+        game[guess1_row][guess1_col] = "X"
+        print("That's not it, you have " + str(4-tries) + " left" + "\n" + str(game))
+    else:
+        game[guess1_row][guess1_col] = "Correct"
+        print("You won, it took you only " + str(tries) + "\n" + game)
+        break
+    tries += 1
+
+try:
+    x=10/0
+except ZeroDivisionError as Err:
+    print(Err)
+'''
+
+#i have those modes: r, w, a, rw
+file=open("tttt.txt","a")
+#print(file.readable())
+#print(file.read())
+#print(file.readline())
+#print(file.readline())
+#print(file.readlines()[0])
+file.write("\nso its")
+
+file.close()
+
+file1=open("new","w")
+file1.write("gg")
+file1.close
+
+
+
+
+from Student import student
+student1=student("dan", 22, True)
+print(student1.name)
+
+

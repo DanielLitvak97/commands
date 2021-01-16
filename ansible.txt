@@ -1,0 +1,16 @@
+ssh-keygen - then do enter enter
+ssh-copy-id localhost -p 1010 - you need to do this command after ssh-keygen, i guess it can be also "ssh-copy-id 10.10.10.10"
+cp -R /etc/ansible hello - copy all files from the etc/ansible to hello
+ssh localhost -p 3034
+ansible -m ping all
+sudo su -
+apt install docker
+
+cat /etc/ansible/hosts:
+[servers]
+node1 ansible_host=localhost ansible_port=3334
+
+ansible servers -m ping
+ansible servers -m apt -a "name=nginx state=present" - it installs nginx
+ansible servers -m apt -a "name=nginx state=absent" - if nginx installed it will delete it, if its already not istalled them its ok, it just makes sure its not installed
+ansible-playbook

@@ -1,0 +1,167 @@
+node("master"){
+    stage("first stage"){
+        bat label: '', script: '''cd C:\\Users\\User\\Desktop
+        echo Daniel > my_name.txt'''
+    }
+    stage("second stage"){
+        bat label: '', script: 'type C:\\Users\\User\\Desktop\\my_name.txt'
+    }
+    stage("third stage"){
+        bat label: '', script: 'wmic logicaldisk get size,freespace,caption'
+    }
+    stage("fourth stage"){
+        bat label: '', script: 'move C:\\Users\\User\\Desktop\\my_name.txt d:\\move'
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+pipeline {
+    agent any
+    stages{
+        stage('create a file and write a name to it'){
+            steps{
+                bat label: '', script: '''cd C:\\Users\\User\\Desktop
+                echo Daniel > my_name.txt'''
+            }
+        }
+        stage('read and print the file content'){
+            steps{
+                bat label: '', script: 'type C:\\Users\\User\\Desktop\\my_name.txt'
+            }
+        }
+        stage('print the free disk space'){
+            steps {
+                bat label: '', script: 'wmic logicaldisk get size,freespace,caption'
+            }
+        }
+        stage('move the file to another directory'){
+            steps {
+                bat label: '', script: 'move C:\\Users\\User\\Desktop\\my_name.txt d:\\move'
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+pipeline {
+    agent any
+    stages{
+        stage('aa'){
+            steps{
+                dir('C:\\Users\\User\\AppData\\Local\\Programs\\Python\\1212121') {
+                    bat 'selenium_test.py'
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1.Started by user adminRunning as SYSTEMBuilding in workspace C:\Program Files (x86)\Jenkins\workspace\1[1] $ cmd /c call C:\WINDOWS\TEMP\jenkins3281337944195402766.batC:\Program Files (x86)\Jenkins\workspace\1>cd C:\Users\User\Desktop C:\Users\User\Desktop>echo Daniel 1>my_name.txt C:\Users\User\Desktop>exit 0 Finished: SUCCESS
+2.Started by user adminRunning as SYSTEMBuilding in workspace C:\Program Files (x86)\Jenkins\workspace\2[2] $ cmd /c call C:\WINDOWS\TEMP\jenkins2239919074417595338.batC:\Program Files (x86)\Jenkins\workspace\2>type C:\Users\User\Desktop\my_name.txt Daniel C:\Program Files (x86)\Jenkins\workspace\2>exit 0 Finished: SUCCESS3.Started by user adminRunning as SYSTEMBuilding in workspace C:\Program Files (x86)\Jenkins\workspace\3[3] $ cmd /c call C:\WINDOWS\TEMP\jenkins8488113215869147328.batC:\Program Files (x86)\Jenkins\workspace\3>wmic logicaldisk get size,freespace,caption Caption FreeSpace Size C: 81967746048 1804264101888 D: 82338786304 1835199191040 F: 
+4.Started by user adminRunning as SYSTEMBuilding in workspace C:\Program Files (x86)\Jenkins\workspace\4[4] $ cmd /c call C:\WINDOWS\TEMP\jenkins15892303796520943.batC:\Program Files (x86)\Jenkins\workspace\4>move C:\Users\User\Desktop\my_name.txt d:\move 1 file(s) moved.C:\Program Files (x86)\Jenkins\workspace\4>exit 0 Finished: SUCCESS5.Started by timerRunning as SYSTEMBuilding in workspace C:\Program Files (x86)\Jenkins\workspace\5Finished: SUCCESS 
+6.Started by user adminRunning in Durability level: MAX_SURVIVABILITY[Pipeline] Start of Pipeline[Pipeline] nodeRunning on Jenkins in C:\Program Files (x86)\Jenkins\workspace\6.5[Pipeline] {[Pipeline] stage[Pipeline] { (create a file and write a name to it)[Pipeline] batC:\Program Files (x86)\Jenkins\workspace\6.5>cd C:\Users\User\Desktop C:\Users\User\Desktop>echo Daniel 1>my_name.txt [Pipeline] }[Pipeline] // stage[Pipeline] stage[Pipeline] { (read and print the file content)[Pipeline] batC:\Program Files (x86)\Jenkins\workspace\6.5>type C:\Users\User\Desktop\my_name.txt Daniel [Pipeline] }[Pipeline] // stage[Pipeline] stage[Pipeline] { (print the free disk space)[Pipeline] batC:\Program Files (x86)\Jenkins\workspace\6.5>wmic logicaldisk get size,freespace,caption Caption FreeSpace Size C: 811778002944 184264101888 D: 812329123840 1835199191040 F: [Pipeline] }[Pipeline] // stage[Pipeline] stage[Pipeline] { (move the file to another directory)[Pipeline] batC:\Program Files (x86)\Jenkins\workspace\6.5>move C:\Users\User\Desktop\my_name.txt d:\move 1 file(s) moved.[Pipeline] }[Pipeline] // stage[Pipeline] }[Pipeline] // node[Pipeline] End of PipelineFinished: SUCCESS7.
+8.9.

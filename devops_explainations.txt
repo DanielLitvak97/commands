@@ -1,0 +1,65 @@
+ci
+pushing the code (commit) and checking it
+cd
+deployment the code on a mock server=ready for the deployment
+
+repository is where all the information like code/documantion and more
+
+maven is a project management and also automatio n tool
+maven is a build / project management tool
+
+artifact=project
+
+interview:
+use the word repositoary, svm
+
+Usually, the build process would also include code analysis, unit testing, archiving etc. All these can be achieved by integrating Jenkins with the corresponding tools (like we did for the SCM and the build tool).
+
+
+delivery - deploy on tested server
+deploy -deploy on real production
+pipeline - every section of the pipeline has jobs to do some processing/action
+
+maven phases:
+https://www.youtube.com/watch?v=IYRYbPR5Gek
+
+good explaination of ci/cd:
+https://www.quora.com/What-is-CI-CD-and-how-Jenkins-fit-into-that
+
+differnce between jenkins to maven:Essentially difference is that Maven is build tool while Jenkins of Hudson is a Continues Integration tool.
+
+
+Read more: https://javarevisited.blogspot.com/2015/01/difference-between-maven-ant-jenkins-and-hudson.html#ixzz60C3XkpYy
+https://javarevisited.blogspot.com/2015/01/difference-between-maven-ant-jenkins-and-hudson.html
+
+apple job:
+https://jobs.apple.com/en-il/details/200091275/sw-developer-devops?team=SFTWR
+
+
+
+validate
+compile
+test
+package
+
+if i do package then automatically it will do all the phases before that, and if one of them fails
+then it wont continue to package
+
+
+
+
+can i build several jobs at the same time?
+whats the deal of the goals
+whats the differnce between jenknis buikd to maven's?
+
+
+
+A compiler takes the Java code that you write and turns that code into something that can run on your computer
+
+
+**/*.war   = any war file which is archived in the package job
+
+
+build=compile,code review,unit testing,integration test,package(WAR,JAR,etc.)
+
+continous delivery- jenkins will take the package file (war or jar, or etc) that in the CI was created and deploy it on the test server, I am not sure but i think that package file is called artifact

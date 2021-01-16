@@ -12,6 +12,7 @@ git log  - you can see the ID of previous commits
 git reset --hard AAAAAA - here you put the ID of commit you want to restore
 git status
 git fetch origin
+git log --oneline
 git log --all --decorate --oneline --graph
 alias graph ="git log --all --decorate --oneline --graph"
 git diff AAAA..BBBB - it shoes which new changes AAAA will get in the merge
@@ -19,8 +20,8 @@ git diff - shows us the new edits we just did
 git merge BBBB
 git branch --merged - it shows which branches are already mereged, hence we can delete the relevant branches
 git checkout IDNAME - you put there the ID of some of your previous commits, this way you can also cehck whats in there but not really resotre it
-
-
+git checkout -- FILEPATH - if did edit in some file and still didn't commit you can revert that change
+git add --all
 
 
 

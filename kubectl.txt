@@ -1,0 +1,35 @@
+kubectl scale rs NGINX-RS --replicas=5
+kubelctl get rs NGINX-RS
+kubectl get po -o wide
+kubectl get po -l app=nginx-app
+
+kubectl create -f NGINX-RS.yml
+kubectl apply -f NGINX-RS.yml
+kubectl delete -f NGINX-RS.yml - will delete pos and rs
+kubectl delete po NAME
+
+kubectl exec -it NAME-POD -- bin/bash
+minikube ip
+minikube ssh
+
+helm install NAME .
+helm delete NAME
+helm install --name NAME . --set replicaCount=2
+helm inspect values .
+helm upgrade NAME . --set replicaCount=3
+
+mountpath - is the folder i am storing TO, I think
+Host Path - From Host to Pod
+the FROM is mounted on TO
+
+deployment upgrades /rollback the pods images by creating new replicasets. and also deploy pods.
+you can create pods from RS but you cant upgrade and roll back
+
+
+
+first label is JUST to identify the deployment, e.g:
+kubectl get deployment -l app=nginx
+
+second label is of the RS, you tell the RS which labels of PODS to look at, also SERVICE checkes those labels.
+
+third label is to identify the pods for the RS and if there is no RS then for the SERVICE.

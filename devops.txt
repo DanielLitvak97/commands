@@ -1,0 +1,57 @@
+send them cv but first read about their position requirmenets in their site:
+liorisr@fb.com
+Dori.joseph@jobinfo.co.il
+Lmirel@salesforce.com
+Michael@giyushitech.com
+
+
+
+jobs:
+
+https://il.indeed.com/jobs?q=junior+devops&l=
+https://www.alljobs.co.il/SearchResultsGuest.aspx?page=1&position=&type=&freetxt=junior%20devops&city=&region=
+https://insider.geektime.co.il/organizations/servicenow/jobs/devops-engineer-878cc1754cb0
+https://www.youtube.com/watch?v=WxjJlYFIWtI
+https://jobs.cmegroup.com/jobs/4269607-devops-engineer
+
+https://jobswipe.co/jobs/junior-devops-jobs-SRCH_L_Q0,13
+https://crispy-sub.co.il/anime/%d7%a4%d7%99%d7%99%d7%a8%d7%99-%d7%98%d7%99%d7%99%d7%9c-2018/
+1
+
+
+
+dierence between vms  docker:
+1. in docker, all the the application share the same OSwhich is Linux, while in VM you have amny VMs with deiffernet OSs, meaning its over head.
+2. The application of docker are much lighter, they are only megas while vms can be gigas >> docker boots faster as a result.
+
+
+node port - port forwaring from k8s to POD
+the service itself has an ip which called cluster ip
+range of the external port listening is 30000=32767
+replicaset responsibe when the pods die to use another one
+
+
+-generator=run-pod/v1 means that only a pod will be created and not also a deployment.
+
+
+dangling image - when you do changes in the docker file,then it will build a new image, so the previoous one is called ngling and you can find itit docker images -a
+
+
+
+
+https://github.com/DensityCo/devops-homework/blob/master/README.md
+https://github.com/onlinecity/Hiring-assigments/tree/master/devops-assigment?fbclid=IwAR2EgD_fPYJnGdP2czZsRvF1OVJlYn1pQWndF0jIi0WfKyele2cIK0UCPjM
+https://github.com/rasday/Zycus_Assigment_for_DevOps?fbclid=IwAR3OO-doyakyZQBW3f0Df4bIphISqztrPSBSWQ2avJW8pjakhCcDZGOVELo
+https://github.com/maheshdevops/devops-test?fbclid=IwAR3u33n9-Uf6l3JsIRhGkrJ16OV-naqaH8PSAhftKHde2HglI8tc__AtigQ
+https://github.com/maheshdevops/devops-test?fbclid=IwAR0T5G-Ae1_JKL3hKHO_70w5JR7mFFp4jy5x0HV6UIpjR4Pyd6pOpC3qywc
+https://www.facebook.com/groups/devopsloft/permalink/1004194976640706/
+https://www.facebook.com/groups/devopsloft/permalink/1006037656456438/
+
+
+
+ad-hoc commands - its just the regularcoomands. not the declaritve way which is yml file
+
+
+https://www.websplanet.com/about-us/careers
+https://www.seev.co.il/job-search/?job_field=%2C%2C%2C%2C249&job_field_cats%5B0%5D%5Bid%5D=4&job_field_cats%5B0%5D%5Bvalues%5D=249&regions=%D7%92%D7%95%D7%A9+%D7%93%D7%9F+%D7%95%D7%94%D7%A9%D7%A4%D7%9C%D7%94&keywords=&x=33&y=26&utm_source=google&utm_medium=cpc&utm_campaign=hi-tech_Placement
+https://www.cps.co.il/job/devops-engineer-15/
