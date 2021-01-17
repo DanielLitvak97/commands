@@ -1,0 +1,115 @@
+
+
+
+
+
+
+
+
+Built-in functions:
+a=['b','c']
+
+a.append('c')
+a.pop(1) - removes and return what is in Index 1
+a.remove(1) - removes the actual value which is "1"
+del(a[1]) - removes  what is in Index 1
+
+" ".join(list) #put spaces between words
+randint(0,len(x)-1)
+x=raw_input("Enter a number: ")
+
+For index, item enumerate(list)
+For a,b in zip(list_a,list_b)
+abs(-4)=4
+Round(5.8)=6
+Hello=hello.replace("B","A") #Raplcing all Bs in the string with A
+word=word.lower()
+a=b.split()#separates all words and put them in a list
+sorted([,4,8,3,2])#(2,3,4,8)      
+
+Dictionary:
+a={'t':'c', 'u':43}
+a['b']='g'   #add/set
+Del menu['a']
+a['b'].sort()
+a['b'].remove('c)
+a['b']=a['b']+10
+Print a.values()
+Print a.keys()
+
+List:
+a=['a','b']
+a.remove('a')
+a=range(51)    #builds a list of numbers from 0 to 50
+
+Range:
+Range(4) =>(stop)=>(0,1,2,3)
+Range((1,4)=>(start,stop)=>(1,2,3)
+Range(0,8,2)=>(start,stop,step)=>(0,2,4,6)
+
+
+Comprehension:
+a=[x**2 for x in range(1,11)]
+# Should be [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+But if we do this:
+Print a[2,9,2]    #start with index of 2, and move 2 indexes everytime, not include 9
+# Should be [9, 25, 49, 81]
+
+
+a=['a','b','c','d','e']
+Print a[3:]     #d, e
+Print a[:2]     #a, b
+Print a[::2]    #a, c, e 
+Print a[::-1]   #e, d, c, b, a
+
+
+Anonymous Functions:
+Lambda x: x%3==0
+Same as:
+Def a(x):
+ return x%3==0
+
+My_list=range(17)
+Print filet(lambda x:x%3==0, my list)
+#should return 0,3,6,9,12,15
+
+
+
+
+
+
+
+
+
+Binary:
+Print 0b1 #1
+Print 0b10 #2
+Print 0b11 #3
+Print 0b110 * 0b11 = 18
+
+Print int(5,2) #5
+Print int("0b101",2) #5
+Print bin(2) #0b10
+
+AND:
+Print bin(0b1100&0b1011) #0b1000
+
+OR:
+Print bin(0b1100|0b1011) #0b1111
+
+XOR:
+Print bin(0b1100|0b1011) #0b0111
+
+
+
+
+
+
+
+Print:
+Print ("Hello %s there %s")%("world","ok")
+
+Regex:
+^abcd$  - specific text
+a+   - catches only where there is a
+[05]+  - it catches the 05 whereever its located in the text file
