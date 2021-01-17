@@ -1,0 +1,182 @@
+docker version
+Docker run nginx   #always check first locally and then internet, also its same like docker run nginx:latest
+Docker run -d ngin - it runs it in the background which means you can still control the cli
+Docker attach "name of the container" - get you back to the container (because you did -d)
+docker ps - lists information about all running containers
+Docker ps -a   -   lists information about all running and stopped containers
+Docker stop "put the ID or the name"
+Docker history "image name" - you will see the layers of that image, if you see there "missing" then it means this layer uses another image's
+Docker rm "put the ID or the name" - remove container
+Docker images - show all the installed images
+Docker rmi "name of the image" - removes the image, but make sure no container is running that image
+Docker pull "name of image" - download the image so it will be already installed locally
+docker run --name "new name of the image" nginx:1.14-alpine
+Docker run redis:4.0   -  it will run version 4.0.14 of redis
+Docker run -it "image name" - if the image is a script or something that requries you to input something (readline) then without "it", you will just see the output (writeline).
+Docker run -p 80:5000 "image name" - forward 80 to 5000
+Docker run -v /opt/datadir:/var/lib/mysql mysql   -   copying whats in the container to the docker so it will be saved
+Docker inspect "container name/id" - more info regarding the container
+Docker logs "name of the container" - logs
+Docker -e APP_COLOR=blue   -  we are editing the APP_COLOR which located in docker inspect
+Docker -e MYSQL_ROOT_PASSWORD=1111
+docker build Dockerfile -t filelocation/thecusotmerapp - download an image from local cpmputer
+Docker push thecusotmerapp - publishes this image to this docker hub
+Docker run ubuntu sleep 5 - runs the sleep program for 5 seconds and then exits
+Docker build -t ubuntu-sleeper . = the . At the end means "its in current directory"
+Docker run ubuntu-sleeper
+Docker un ubuntu-sleeper sleep 10=docker run ubuntu-sleeper 10
+Docker run python:3.6 cat /etc/*release*
+
+
+Docker run ubuntu --network=none/host
+Docker network create network --driver bridge --subnet 1.1.1.1/24 --gateway 1.1.1.2 hellothisisaname
+Docker network ls
+Docker network inspect host/bridge/none
+
+
+Docker volume create data_volume  = it creates the folder "data_volume" in /var/lib/docker/volumes
+Docker run -v data_volume:var/lib/mysql mysql  =  /var/lib/mysql is the default path of mysql image and this path is inside the CONTAINER, all data written by the data base, stored in fact in data_volume (which is in the host), even if the container is destroyed, the date is still active
+Docker run -v /data/mysql:/var/lib/mysql mysql  =  mounting to /data/mysql
+Docker run --mount type=bind,source=/data/mysql,target=/var/lib/mysql mysql
+
+
+Docker-compose -v -
+Docker-compose up -d  -  run the compose in detached mode
+Docker-compose ps 
+Docker-compose up --scale database=3 - create 3 containers of what is configured in "database"
+
+Docker login private-registry  -  it will ask for username and passowrd
+Docker run -d -p 5000:5000 --name registry registry:2  - 
+
+Every image is based on OS or an image which is based on OS
+
+Image=OS, software, application code
+
+Images are defined based on the dockerfile
+
+Containers are not meant to run operate systems, but a specific task or a process such as:
+Application server, data base, or some computation or analyses.
+Once the task completes or crashed, then the container exists.
+
+Ubunto container exited because it has BASH function which listens for terminal inputs, because docker by default doesn’t attach a terminal when it runs (container), then the BASH process finished and as a result the container existed as wll
+
+FROM Ubuntu
+ENTRYPOINT ["sleep"]
+CMD["5"]
+
+Docker run --entrypoint sleep2.0 ubuntu-sleeper 10
+
+By default a container is attached to a "bridge" network
+
+If I have 2 dockerfiles which their first 3 layers for example, are the same.
+So docekr won't create the 3 layers again when it builds dockerfile2, it will reuse them again from the cache.this way its faster and efficent and saves disk space
+
+Docker creates a container based on the 5 layers and also creates a sixth layer (called container layer), it's used to store data created by the container such as log files, temp files or just any files modified by the user.
+This layer is alive as long as the container alives
+And this image layer is shared with all the containers which use this image (because what I said earlier
+If you want to create a new file in the container, then it will create it in the sixth layer because remember the files in the image layers (5 of them) are READ.
+
+Images layer are read layers
+Container layer is read write layer
+
+When the container is deleted, the writable layer is also deleted. The underlying image remains unchanged.
+
+
+I think all containers are located in /var/lib/docker/volumes folder
+
+Docker -H-1.1.1.1 run nginx  -  if your docker cli is located somewhere else (e.g laptop)
+
+Docker run --cpus=.5 ubuntu  -  this will make sure that the container won't take more than 50% Cpu of the host
+Docker run --memory=100m ubuntu  -  the container can use only up to 100 mega bytes
+
+When you modifying the image file (remember READ) then what will happen is that docker will copy and paste those changes to the container layer (6).
+So if you edit the app.by, then you will see a new app.py in the sixth layer.
+Meaning, that the image will stay the same all the time.
+If you delete the container, then all the changes will be deleted (because they are stored in the sixth layer). Solution for that is the "volumes".
+You can only "edit" the image with the build command.
+
+If you have 2 jenkins containers which use the same volume, then when you conenct to the webui of both of them, you will see the same jobs
+
+https://www.sumologic.com/blog/kubernetes-vs-docker/
+
+
+
+
+
+
+
+
+
+
+Docker compose - networking:
+
+Version 1:
+Docker compose attaches all the containers it runs to a default bridge network,
+And then use links to enable communication between the containers.
+
+Version 2:
+Docker compose automatically creates a dedicated bridge network for this application,
+And then attaches all containers to that new network.
+All containers are then able to communicate to each other using each other's service name.
+Basically they don't need to use links in v2 of docker compose.
+You can simply get rid of all links you mentioned in v1, when you come work a file from v1 to v2.
+
+Docker compose version - the differnece is just the format between each version
+
+
+
+
+
+
+
+
+
+
+
+
+
+Version: '3'
+Services:
+ web:
+   image: nginx
+   ports:
+    - 8080:80
+ Database:
+  image: redis
+ 
+
+
+
+
+
+
+
+
+Docker Engine:
+Docker CLI - command line interface to perform actions such as running containers, removing images, etc. And it uses the RESP API to interact with the docker deamom.
+REST API - API interface that programs can use to talk to the deamon and provide instructions. You can create your own tools using this RESP API.
+Docker Deamon -  Background proccess that manages docker objects such as: images, containers, volumes and networks
+
+
+
+
+
+
+
+Every new process on the container is a new process on the host, so on the host it can be PID8 but on the container it will be PID1
+
+By default there is no restriction on resource allocation in docker, so a container can consume resources as much as it wants
+
+
+
+
+
+
+In linux we have for example base images (which we sprcify in docker file) like ubuntu, fedora, etc..
+In windows we have 2:Window Server Core,   Nano Server.
+
+
+In hyper V isolation, there is an isolation between the containers
+
+
+
